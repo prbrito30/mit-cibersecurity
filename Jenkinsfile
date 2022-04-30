@@ -7,15 +7,16 @@ pipeline {
     //Fases do pipeline
     stages {
         
-       stage('Build') {
+       stage('build') {
             steps {
                 script {
                     echo 'fazendo o build do projeto'
+                    sh "ls -l"
                 }
             }
         }
         
-       stage('Unit-test') {
+       stage('unit-test') {
             steps {
                 script {
                     echo 'fazendo o test do projeto'
@@ -23,7 +24,7 @@ pipeline {
             }
         }
         
-       stage('Deploy to stage') {
+       stage('deploy to stage') {
             steps {
                 script {
                     echo 'fazendo o deploy to stage do projeto'
@@ -31,7 +32,7 @@ pipeline {
             }
         }
         
-       stage('Acceptance do projeto') {
+       stage('acceptance test') {
             steps {
                 script {
                     echo 'fazendo o acceptance test do projeto'
@@ -39,7 +40,7 @@ pipeline {
             }
         }
         
-       stage('Deploy to production') {
+       stage('deploy to production') {
             steps {
                 script {
                     echo 'fazendo o deploy to production do projeto'
